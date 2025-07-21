@@ -1,6 +1,7 @@
 import './globals.css'; // Import global styles
 import { ThemeProvider } from '../components/theme-provider'; // Assume theme-provider.jsx is in components
 import { Toaster } from '../components/ui/sonner';
+import { dbConnect } from '@/service/mongo';
 // This is a placeholder for your font imports if you have any.
 // For simplicity, we're omitting actual font imports here,
 // but in a real Next.js app, you might have something like:
@@ -12,7 +13,9 @@ export const metadata = {
 	description: 'A basic Next.js app demonstrating a light theme.',
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+	const conn = await dbConnect();
+	console.log(conn);
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body>
