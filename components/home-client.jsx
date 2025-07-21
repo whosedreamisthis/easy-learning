@@ -24,8 +24,6 @@ export default function HomeClient({ courses }) {
 		mode ? toast.success('Test Success') : toast.error('test error');
 	};
 
-	console.log('Courses in client component:', courses); // Now courses are available here
-
 	return (
 		<div className="min-h-screen flex items-center justify-center bg-background text-foreground">
 			<Button onClick={() => handleClick(true)}>Click</Button>

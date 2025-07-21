@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-console.log('env ', process.env.MONGODB_CONNECTION_STRING);
 // Check if MONGODB_CONNECTION_STRING is defined
 const MONGODB_URI = process.env.MONGODB_CONNECTION_STRING;
 if (!MONGODB_URI) {

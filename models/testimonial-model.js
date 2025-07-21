@@ -18,7 +18,6 @@ const TestimonialSchema = new Schema({
 		ref: 'User',
 	},
 });
-console.log('models', mongoose.models);
 export const Testimonial =
 	mongoose.models.Testimonial ??
 	mongoose.model('Testimonial', TestimonialSchema);

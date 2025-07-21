@@ -43,5 +43,4 @@ const UserSchema = new Schema({
 		type: String,
 	},
 });
-console.log('models', mongoose.models);
 export const User = mongoose.models.User ?? mongoose.model('User', UserSchema);

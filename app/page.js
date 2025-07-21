@@ -5,9 +5,9 @@ import HomeClient from '@/components/home-client'; // Import the new client comp
 
 export default async function Home() {
 	const courses = await getCourses(); // Data fetched on the server
-	console.log('Courses in server component:', courses);
-	console.log(courses[0]?.instructor?.socialMedia);
-	console.log(courses[1]?.testimonials);
+	// console.log('Courses in server component:', courses);
+	// console.log(courses[0]?.instructor?.socialMedia);
+	// console.log(courses[1]?.modules);
 
 	return (
 		// Pass the fetched courses to the client component

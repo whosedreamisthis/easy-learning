@@ -17,10 +17,12 @@ const CourseSchema = new Schema({
 		required: true,
 		type: String,
 	},
-	modules: {
-		required: true,
-		type: [Schema.ObjectId],
-	},
+	modules: [
+		{
+			type: Schema.ObjectId,
+			ref: 'Module',
+		},
+	],
 	price: {
 		required: true,
 		type: Number,
@@ -28,10 +30,6 @@ const CourseSchema = new Schema({
 	active: {
 		required: true,
 		type: Boolean,
-	},
-	thumbnail: {
-		required: true,
-		type: String,
 	},
 	category: {
 		type: Schema.ObjectId,
@@ -64,6 +62,5 @@ const CourseSchema = new Schema({
 		type: Date,
 	},
 });
-console.log('models', mongoose.models);
 export const Course =
 	mongoose.models.Course ?? mongoose.model('Course', CourseSchema);
