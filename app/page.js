@@ -1,42 +1,14 @@
-'use client'; // This component needs to be a Client Component to use hooks like useState/useEffect
+// app/page.js
+// This file is now a Server Component (no 'use client' at the top)
+import { getCourses } from '@/queries/courses';
+import HomeClient from '@/components/home-client'; // Import the new client component
 
-import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes'; // Import useTheme hook
-import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
-export default function Home() {
-	const { theme, setTheme, resolvedTheme } = useTheme(); // Get theme state and setter
-	const [mounted, setMounted] = useState(false); // State to track if component is mounted on client
+export default async function Home() {
+	const courses = await getCourses(); // Data fetched on the server
+	console.log('Courses in server component:', courses);
 
-	// useEffect runs only on the client side after hydration.
-	// This ensures that we only interact with the theme system when the component is fully mounted.
-	useEffect(() => {
-		setMounted(true);
-		// You could optionally call setTheme('light') here if you wanted to explicitly
-		// set it on the client, but with enableSystem={false} and defaultTheme="light"
-		// in layout.js, it's often not strictly necessary for a fixed light theme.
-		// However, including it can ensure consistency if local storage was previously set to 'dark'.
-		setTheme('light'); // Explicitly set theme to light on client mount
-	}, []); // Add setTheme to dependency array
-
-	// If the component is not yet mounted, return null or a loading state.
-	// This prevents hydration mismatches where the server might render one thing
-	// and the client another before next-themes has initialized.
-	if (!mounted) {
-		return null;
-	}
-	const handleClick = (mode) => {
-		mode ? toast.success('Test Success') : toast.error('test error');
-	};
 	return (
-		<div className="min-h-screen flex items-center justify-center bg-background text-foreground">
-			<Button
-				onClick={() => {
-					handleClick(true);
-				}}
-			>
-				Click
-			</Button>
-		</div>
+		// Pass the fetched courses to the client component
+		<HomeClient courses={courses} />
 	);
 }
