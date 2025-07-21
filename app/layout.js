@@ -1,6 +1,6 @@
 import './globals.css'; // Import global styles
 import { ThemeProvider } from '../components/theme-provider'; // Assume theme-provider.jsx is in components
-
+import { Toaster } from '../components/ui/sonner';
 // This is a placeholder for your font imports if you have any.
 // For simplicity, we're omitting actual font imports here,
 // but in a real Next.js app, you might have something like:
@@ -8,7 +8,7 @@ import { ThemeProvider } from '../components/theme-provider'; // Assume theme-pr
 // const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-	title: 'Simple Light Theme App',
+	title: 'Easy Learning',
 	description: 'A basic Next.js app demonstrating a light theme.',
 };
 
@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
 					disableTransitionOnChange
 				>
 					{children}
+					<Toaster richColors position="top-center" />
 				</ThemeProvider>
 			</body>
 		</html>

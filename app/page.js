@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes'; // Import useTheme hook
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 export default function Home() {
 	const { theme, setTheme, resolvedTheme } = useTheme(); // Get theme state and setter
 	const [mounted, setMounted] = useState(false); // State to track if component is mounted on client
@@ -24,29 +25,18 @@ export default function Home() {
 	if (!mounted) {
 		return null;
 	}
-
+	const handleClick = (mode) => {
+		mode ? toast.success('Test Success') : toast.error('test error');
+	};
 	return (
 		<div className="min-h-screen flex items-center justify-center bg-background text-foreground">
-			<h1 className="text-3xl font-bold underline">Hello world!</h1>
 			<Button
 				onClick={() => {
-					setTheme('dark');
-					setMounted(true);
-					console.log('button click');
-					if (theme === 'light') {
-						setTheme('dark');
-					} else {
-						setTheme('light');
-					}
+					handleClick(false);
 				}}
 			>
-				Change theme
+				Click
 			</Button>
-			<p className="mt-4 text-lg">
-				Current theme: <span className="font-semibold">{theme}</span>{' '}
-				(Resolved:{' '}
-				<span className="font-semibold">{resolvedTheme}</span>)
-			</p>
 		</div>
 	);
 }
