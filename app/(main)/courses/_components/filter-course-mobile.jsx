@@ -72,8 +72,8 @@ const CATEGORY_OPTIONS = [
 
 export default function FilterCourseMobile() {
 	const [filter, setFilter] = useState({
-		categories: ['development'],
-		price: ['free'],
+		categories: ['Development'],
+		price: ['Free', 'Paid'],
 		sort: '',
 	});
 
