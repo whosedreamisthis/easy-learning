@@ -5,10 +5,20 @@ import { Category } from '@/models/category-model';
 import { User } from '@/models/user-model';
 import { Testimonial } from '@/models/testimonial-model';
 import { Module } from '@/models/module-model';
-export async function getCourses() {
+import { replaceMongoIdInArray } from '@/lib/convertData';
+export async function getCourseList() {
 	await dbConnect(); // Crucial: Ensure connection is established
 	try {
 		const courses = await Course.find({})
+			.select([
+				'title',
+				'subtitle',
+				'thumbnail',
+				'modules',
+				'price',
+				'category',
+				'instructor',
+			])
 			.populate({
 				path: 'category',
 				model: Category,
@@ -24,9 +34,10 @@ export async function getCourses() {
 			.populate({
 				path: 'modules',
 				model: Module,
-			});
+			})
+			.lean();
 		// Serialize data for passing from server to client component if needed
-		return JSON.parse(JSON.stringify(courses));
+		return replaceMongoIdInArray(courses); //JSON.parse(JSON.stringify(courses));
 	} catch (error) {
 		console.error('Error fetching courses:', error);
 		return [];
