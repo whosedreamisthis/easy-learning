@@ -2,6 +2,17 @@ import React from 'react';
 import Link from 'next/link';
 import Logo from './logo';
 import { cn } from '@/lib/utils';
+
+import { X } from 'lucide-react';
+import { Button, buttonVariants } from './ui/button';
+import { Menu } from 'lucide-react';
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from './ui/dropdown-menu';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 export default function MainNav({ items, children }) {
 	console.log('ITEMS', items);
 	return (
@@ -29,6 +40,43 @@ export default function MainNav({ items, children }) {
 					</nav>
 				}
 			</div>
+			<nav className="flex items-center gap-3">
+				<div className="items-center gap-3 hidden lg:flex">
+					<Link
+						href="/login"
+						className={cn(buttonVariants({ size: 'sm' }), 'px-4')}
+					>
+						Login
+					</Link>
+					<DropdownMenu>
+						<DropdownMenuTrigger asChild>
+							<Button variant="outline" size="sm">
+								Register
+							</Button>
+						</DropdownMenuTrigger>
+						<DropdownMenuContent align="end" className="w-56 mt-4">
+							<DropdownMenuItem className="cursor-pointer">
+								<Link href="">Student</Link>
+							</DropdownMenuItem>
+							<DropdownMenuItem className="cursor-pointer">
+								<Link href="">Instructor</Link>
+							</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
+				</div>
+				<DropdownMenu>
+					<DropdownMenuTrigger asChild>
+						<div className="cursor-pointer">
+							<Avatar>
+								<AvatarImage
+									src="https://github.com/shadcn.png"
+									alt="@dana"
+								></AvatarImage>
+							</Avatar>
+						</div>
+					</DropdownMenuTrigger>
+				</DropdownMenu>
+			</nav>
 		</>
 		// <div className="flex flex-col sm:flex-row gap-4 mb-10 mt-4 ml-2">
 		// 	<Logo />

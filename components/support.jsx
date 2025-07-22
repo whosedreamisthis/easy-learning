@@ -10,7 +10,7 @@ const support = () => {
 						<span className="relative inline-flex sm:inline">
 							<span className="bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] blur-lg filter opacity-30 w-full h-full absolute inset-0"></span>
 							<span className="relative">
-								Let us know for support
+								Let us know how we can support you.
 							</span>
 						</span>
 					</p>
