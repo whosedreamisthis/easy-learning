@@ -21,9 +21,9 @@ export default function RelatedCourses({ courses }) {
 			<div className="container">
 				<SectionTitle className="mb-6">Related Courses</SectionTitle>
 				<Carousel
-					opts={{
-						align: 'start',
-					}}
+					// opts={{
+					// 	align: 'start',
+					// }}
 					className="max-2xl:w-[90%] w-full mx-auto"
 				>
 					<CarouselPrevious />

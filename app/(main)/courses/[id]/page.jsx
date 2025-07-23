@@ -47,12 +47,12 @@ const courses = [
 ];
 const SingleCoursePage = () => {
 	return (
-		<>
+		<div className="ml-5">
 			<CourseDetailsIntro />
 			<CourseDetails />
 			<Testimonials courses={courses} />
 			<RelatedCourses courses={courses} />
-		</>
+		</div>
 	);
 };
 export default SingleCoursePage;
