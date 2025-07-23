@@ -3,6 +3,7 @@ import CourseDetails from './_components/course-details';
 import Testimonials from './_components/testimonials';
 import RelatedCourses from './_components/related-courses';
 import { getCourseDetails } from '@/queries/courses';
+import { replaceMongoIdInArray } from '@/lib/convertData';
 
 const courses = [
 	{
@@ -50,7 +51,6 @@ const courses = [
 
 const SingleCoursePage = async ({ params: { id } }) => {
 	const course = await getCourseDetails(id);
-	console.log(course);
 	return (
 		<div className="ml-5">
 			<CourseDetailsIntro
@@ -63,7 +63,12 @@ const SingleCoursePage = async ({ params: { id } }) => {
 				subtitle={course?.subtitle}
 				instructor={course.instructor}
 			/>
-			<Testimonials courses={course.testimonials} />
+			{course?.testimonials && (
+				<Testimonials
+					testimonials={replaceMongoIdInArray(course?.testimonials)}
+				/>
+			)}
+
 			<RelatedCourses courses={courses} />
 		</div>
 	);

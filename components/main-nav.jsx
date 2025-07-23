@@ -108,18 +108,5 @@ export default function MainNav({ items, children }) {
 				</Button>
 			</nav>
 		</>
-		// <div className="flex flex-col sm:flex-row gap-4 mb-10 mt-4 ml-2">
-		// 	<Logo />
-		// 	<div className="flex flex-row justify-start gap-4">
-		// 		{items.map((item) => {
-		// 			console.log(item);
-		// 			return (
-		// 				<Link key={item.id} href={item.href}>
-		// 					<h1>{item.title}</h1>
-		// 				</Link>
-		// 			);
-		// 		})}
-		// 	</div>
-		// </div>
 	);
 }
