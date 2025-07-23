@@ -25,7 +25,7 @@ import { cn } from '@/lib/utils';
 import CourseCurriculum from './course-curriculum';
 import CourseInstructor from './course-instructor';
 
-export default function CourseDetails() {
+export default function CourseDetails({ title, subtitle, instructor }) {
 	return (
 		<section className="py-8 md:py-12 lg:py-24">
 			<div className="container">
@@ -33,11 +33,9 @@ export default function CourseDetails() {
 					Development
 				</span>
 				<h3 className="text-2xl md:text-3xl lg:text-4xl font-bold 2xl:text-5xl mt-3">
-					Reactive Accelerator
+					{title}
 				</h3>
-				<p className="mt-3 text-gray-600 text-sm">
-					Master React JS & Next JS
-				</p>
+				<p className="mt-3 text-gray-600 text-sm">{subtitle}</p>
 				{/*  */}
 				<div className="flex sm:items-center gap-5 flex-col sm:flex-row sm:gap-6 md:gap-20 mt-6">
 					<div className="flex items-center gap-2">
@@ -46,7 +44,9 @@ export default function CourseDetails() {
 							src="https://avatars.githubusercontent.com/u/47516621?v=4"
 							alt="Ariyan"
 						/>
-						<p className="font-bold">Kazi Ariyan</p>
+						<p className="font-bold">
+							{instructor.firstName} {instructor.lastName}
+						</p>
 					</div>
 					<div className="flex items-center gap-2 text-sm">
 						<span className="text-success font-semibold">
