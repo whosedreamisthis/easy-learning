@@ -24,13 +24,17 @@ import CourseOverview from './course-overview';
 import { cn } from '@/lib/utils';
 import CourseCurriculum from './course-curriculum';
 import CourseInstructor from './course-instructor';
+import Image from 'next/image';
+import { formatMyDate } from '@/lib/date';
 
-export default function CourseDetails({ title, subtitle, instructor }) {
+export default function CourseDetails({ course }) {
+	const { title, subtitle, instructor, category } = course;
+	console.log(course);
 	return (
 		<section className="py-8 md:py-12 lg:py-24">
 			<div className="container">
 				<span className="bg-green-500 px-4 py-0.5 rounded-full text-xs font-medium text-white inline-block">
-					Development
+					{category.title}
 				</span>
 				<h3 className="text-2xl md:text-3xl lg:text-4xl font-bold 2xl:text-5xl mt-3">
 					{title}
@@ -39,10 +43,12 @@ export default function CourseDetails({ title, subtitle, instructor }) {
 				{/*  */}
 				<div className="flex sm:items-center gap-5 flex-col sm:flex-row sm:gap-6 md:gap-20 mt-6">
 					<div className="flex items-center gap-2">
-						<img
+						<Image
 							className="w-[40px] h-[40px] rounded-full"
-							src="https://avatars.githubusercontent.com/u/47516621?v=4"
-							alt="Ariyan"
+							src={instructor?.profilePicture}
+							alt={instructor.firstName}
+							width={40}
+							height={40}
 						/>
 						<p className="font-bold">
 							{instructor.firstName} {instructor.lastName}
@@ -52,7 +58,7 @@ export default function CourseDetails({ title, subtitle, instructor }) {
 						<span className="text-success font-semibold">
 							Last Updated:{' '}
 						</span>
-						<span>Feb 22, 2022</span>
+						<span>{formatMyDate(course.modifiedOn)}</span>
 					</div>
 				</div>
 
@@ -70,7 +76,7 @@ export default function CourseDetails({ title, subtitle, instructor }) {
 							{/* <TabsTrigger value="reviews">Reviews</TabsTrigger> */}
 						</TabsList>
 						<TabsContent value="overview">
-							<CourseOverview />
+							<CourseOverview course={course} />
 							{/* each tab content can be independent component */}
 						</TabsContent>
 						<TabsContent value="curriculum">

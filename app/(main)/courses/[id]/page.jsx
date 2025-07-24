@@ -58,11 +58,7 @@ const SingleCoursePage = async ({ params: { id } }) => {
 				subtitle={course?.subtitle}
 				thumbnail={course?.thumbnail}
 			/>
-			<CourseDetails
-				title={course?.title}
-				subtitle={course?.subtitle}
-				instructor={course.instructor}
-			/>
+			<CourseDetails course={course} />
 			{course?.testimonials && (
 				<Testimonials
 					testimonials={replaceMongoIdInArray(course?.testimonials)}
