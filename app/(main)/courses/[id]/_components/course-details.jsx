@@ -29,7 +29,6 @@ import { formatMyDate } from '@/lib/date';
 
 export default function CourseDetails({ course }) {
 	const { title, subtitle, instructor, category } = course;
-	console.log(course);
 	return (
 		<section className="py-8 md:py-12 lg:py-24">
 			<div className="container">
@@ -81,7 +80,7 @@ export default function CourseDetails({ course }) {
 						</TabsContent>
 						<TabsContent value="curriculum">
 							{/* each tab content can be independent component */}
-							<CourseCurriculum />
+							<CourseCurriculum course={course} />
 							{/* contents end */}
 						</TabsContent>
 

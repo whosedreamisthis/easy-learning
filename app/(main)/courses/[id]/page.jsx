@@ -49,7 +49,9 @@ const courses = [
 	},
 ];
 
-const SingleCoursePage = async ({ params: { id } }) => {
+const SingleCoursePage = async ({ params }) => {
+	const awaitedParams = await params;
+	const { id } = awaitedParams;
 	const course = await getCourseDetails(id);
 	return (
 		<div className="ml-5">

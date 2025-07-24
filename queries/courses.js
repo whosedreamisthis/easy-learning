@@ -5,6 +5,7 @@ import { Category } from '@/models/category-model';
 import { User } from '@/models/user-model';
 import { Testimonial } from '@/models/testimonial-model';
 import { Module } from '@/models/module-model';
+import { Lesson } from '@/models/lesson-model';
 import {
 	replaceMongoIdInArray,
 	replaceMongoIdInObject,
@@ -79,6 +80,10 @@ export async function getCourseDetails(id) {
 			.populate({
 				path: 'modules',
 				model: Module,
+				populate: {
+					path: 'lessonIds',
+					model: Lesson,
+				},
 			})
 			.lean();
 		// Serialize data for passing from server to client component if needed
