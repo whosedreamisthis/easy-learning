@@ -10,6 +10,9 @@ import {
 	replaceMongoIdInArray,
 	replaceMongoIdInObject,
 } from '@/lib/convertData';
+import { getEnrollmentsForCourse } from './enrollement';
+import { getTestimonialsForCourse } from './testimonials';
+
 export async function getCourseList() {
 	await dbConnect(); // Crucial: Ensure connection is established
 	try {
@@ -92,4 +95,44 @@ export async function getCourseDetails(id) {
 		console.error('Error fetching courses:', error);
 		return [];
 	}
+}
+
+export async function getCourseDetailsByInstructor(instructorId) {
+	const courses = await Course.find({ instructor: instructorId }).lean();
+	const enrollments = await Promise.all(
+		courses.map(async (course) => {
+			const enrollment = await getEnrollmentsForCourse(
+				course._id.toString()
+			);
+
+			return enrollment;
+		})
+	);
+
+	const totalEnrollments = enrollments.reduce((item, currentValue) => {
+		return item.length + currentValue.length;
+	});
+
+	const testimonials = await Promise.all(
+		courses.map(async (course) => {
+			const testimonial = await getTestimonialsForCourse(
+				course._id.toString()
+			);
+
+			return testimonial;
+		})
+	);
+
+	const totalTestimonials = testimonials.flat();
+	const avgRating =
+		totalTestimonials.reduce(function (acc, obj) {
+			return acc + obj.rating;
+		}, 0) / totalTestimonials.length;
+	return {
+		courses: courses.length,
+		enrollments: totalEnrollments,
+		reviews: totalTestimonials.length,
+		ratings: avgRating.toPrecision(2),
+	};
+	console.log('testimonials', totalTestimonials, avgRating);
 }
