@@ -1,16 +1,16 @@
 import mongoose, { Schema } from 'mongoose';
 
 const UserSchema = new Schema({
-	firstName: {
+	first_name: {
 		required: true,
 		type: String,
 	},
-	lastName: {
+	last_name: {
 		required: true,
 		type: String,
 	},
 	password: {
-		required: false,
+		required: true,
 		type: String,
 	},
 	email: {
@@ -18,15 +18,16 @@ const UserSchema = new Schema({
 		type: String,
 	},
 
-	phone: {
+	role: {
 		required: true,
 		type: String,
 	},
-	role: {
+	phone: {
+		required: false,
 		type: String,
 	},
 	bio: {
-		required: true,
+		required: false,
 		type: String,
 	},
 

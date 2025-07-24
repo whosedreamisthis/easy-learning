@@ -1,70 +1,243 @@
-[{
-  "_id": {
-    "$oid": "663a06e7bfe65e5778eedf2a"
-  },
-  "firstName": "John",
-  "lastName": "Doe",
-  "password": "password123",
-  "email": "john.doe@example.com",
-  "phone": "+1234567890",
-  "role": "Teacher",
-  "bio": "Experienced educator passionate about fostering student learning and development.",
-  "socialMedia": {
-    "twitter": "@johndoe",
-    "linkedin": "linkedin.com/in/johndoe",
-    "facebook": "facebook.com/johndoe"
-  },
-  "profilePicture": "https://i.pravatar.cc",
-  "designation": "Senior Software Engineer, Dell Inc."
-},
-{
-  "_id": {
-    "$oid": "663a0b36bfe65e5778eedf7e"
-  },
-  "first_name": "Michael",
-  "last_name": "Brown",
-  "password": "securepassword",
-  "email": "michael.brown@example.com",
-  "phone": "+4455667788",
-  "role": "Student",
-  "bio": "Passionate about finance and investing.",
-  "social_media": {
-    "linkedin": "https://linkedin.com/in/michaelbrown"
-  },
-  "profile_picture": "https://i.pravatar.cc",
-  "designation": "Junior Develeoper, Acme"
-},
-{
-  "_id": {
-    "$oid": "664accf41387e2ad2e8be488"
-  },
-  "first_name": "Alex",
-  "last_name": "Brown",
-  "password": "securepassword",
-  "email": "alex.brown@example.com",
-  "phone": "+42255667788",
-  "role": "Student",
-  "bio": "I love programming, I eat JavaScript",
-  "social_media": {
-    "linkedin": "https://linkedin.com/in/alexbrown"
-  },
-  "profile_picture": "https://i.pravatar.cc",
-  "designation": "Junior Develeoper, OpenText"
-},
-{
-  "_id": {
-    "$oid": "664adddc1387e2ad2e8be4a0"
-  },
-  "first_name": "Fatima",
-  "last_name": "Shekh",
-  "password": "securepassword",
-  "email": "fatima.shekh@example.com",
-  "phone": "+88255667788",
-  "role": "Student",
-  "bio": "I love coding",
-  "social_media": {
-    "linkedin": "https://linkedin.com/in/fatima"
-  },
-  "profile_picture": "https://i.pravatar.cc",
-  "designation": "Junior Develeoper, Microsoft"
-}]
+[
+	{
+		"_id": {
+			"$oid": "663a06e7bfe65e5778eedf2a"
+		},
+		"first_name": "John",
+		"last_name": "Doe",
+		"password": "password123",
+		"email": "john.doe@example.com",
+		"phone": "+1234567890",
+		"role": "Teacher",
+		"bio": "Experienced educator passionate about fostering student learning and development.",
+		"socialMedia": {
+			"twitter": "@johndoe",
+			"linkedin": "linkedin.com/in/johndoe",
+			"facebook": "facebook.com/johndoe"
+		},
+		"profilePicture": "https://i.pravatar.cc",
+		"designation": "Senior Software Engineer, Dell Inc."
+	},
+	{
+		"_id": {
+			"$oid": "663a0b36bfe65e5778eedf7e"
+		},
+		"first_name": "Michael",
+		"last_name": "Brown",
+		"password": "securepassword",
+		"email": "michael.brown@example.com",
+		"phone": "+4455667788",
+		"role": "Student",
+		"bio": "Passionate about finance and investing.",
+		"social_media": {
+			"linkedin": "https://linkedin.com/in/michaelbrown"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "Junior Develeoper, Acme"
+	},
+	{
+		"_id": {
+			"$oid": "664accf41387e2ad2e8be488"
+		},
+		"first_name": "Alex",
+		"last_name": "Brown",
+		"password": "securepassword",
+		"email": "alex.brown@example.com",
+		"phone": "+42255667788",
+		"role": "Student",
+		"bio": "I love programming, I eat JavaScript",
+		"social_media": {
+			"linkedin": "https://linkedin.com/in/alexbrown"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "Junior Develeoper, OpenText"
+	},
+	{
+		"_id": {
+			"$oid": "664adddc1387e2ad2e8be4a0"
+		},
+		"first_name": "Fatima",
+		"last_name": "Shekh",
+		"password": "securepassword",
+		"email": "fatima.shekh@example.com",
+		"phone": "+88255667788",
+		"role": "Student",
+		"bio": "I love coding",
+		"social_media": {
+			"linkedin": "https://linkedin.com/in/fatima"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "Junior Develeoper, Microsoft"
+	},
+	{
+		"_id": {
+			"$oid": "664ade8f1387e2ad2e8be4b2"
+		},
+		"first_name": "Sarah",
+		"last_name": "Chen",
+		"password": "passwordABC",
+		"email": "sarah.chen@example.com",
+		"phone": "+19876543210",
+		"role": "Teacher",
+		"bio": "Passionate about literature and inspiring young minds.",
+		"social_media": {
+			"twitter": "@sarahc_edu",
+			"linkedin": "https://linkedin.com/in/sarahchen"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "English Department Head, City High School"
+	},
+	{
+		"_id": {
+			"$oid": "664adf121387e2ad2e8be4c4"
+		},
+		"first_name": "David",
+		"last_name": "Garcia",
+		"password": "securePass",
+		"email": "david.garcia@example.com",
+		"phone": "+34987654321",
+		"role": "Student",
+		"bio": "Aspiring graphic designer with a love for digital art.",
+		"social_media": {
+			"instagram": "instagram.com/davidg_art"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "Design Intern, Creative Agency"
+	},
+	{
+		"_id": {
+			"$oid": "664adfa51387e2ad2e8be4d6"
+		},
+		"first_name": "Emily",
+		"last_name": "Wang",
+		"password": "emilyPassword",
+		"email": "emily.wang@example.com",
+		"phone": "+861234567890",
+		"role": "Teacher",
+		"bio": "Math enthusiast, dedicated to making complex concepts easy to understand.",
+		"social_media": {
+			"twitter": "@emilyw_math"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "Mathematics Teacher, International School"
+	},
+	{
+		"_id": {
+			"$oid": "664ae0381387e2ad2e8be4e8"
+		},
+		"first_name": "Chris",
+		"last_name": "Johnson",
+		"password": "johnsonSecure",
+		"email": "chris.j@example.com",
+		"phone": "+15551234567",
+		"role": "Student",
+		"bio": "Enjoys learning about artificial intelligence and machine learning.",
+		"social_media": {
+			"github": "github.com/chrisj_dev"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "AI Research Assistant, University Lab"
+	},
+	{
+		"_id": {
+			"$oid": "664ae0cb1387e2ad2e8be4fa"
+		},
+		"first_name": "Maria",
+		"last_name": "Lopez",
+		"password": "mariaSafePass",
+		"email": "maria.l@example.com",
+		"phone": "+521234567890",
+		"role": "Teacher",
+		"bio": "Bilingual educator with a focus on cultural exchange.",
+		"social_media": {
+			"facebook": "facebook.com/marialopez_edu"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "Spanish Teacher, Community College"
+	},
+	{
+		"_id": {
+			"$oid": "664ae15e1387e2ad2e8be50c"
+		},
+		"first_name": "Omar",
+		"last_name": "Khan",
+		"password": "omarK_pass",
+		"email": "omar.khan@example.com",
+		"phone": "+923001234567",
+		"role": "Student",
+		"bio": "Keen interest in cybersecurity and ethical hacking.",
+		"social_media": {
+			"twitter": "@omark_sec"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "Cybersecurity Intern, Tech Solutions"
+	},
+	{
+		"_id": {
+			"$oid": "664ae1f11387e2ad2e8be51e"
+		},
+		"first_name": "Linda",
+		"last_name": "Miller",
+		"password": "lindaM_pw",
+		"email": "linda.m@example.com",
+		"phone": "+17789901122",
+		"role": "Teacher",
+		"bio": "Science educator, promoting hands-on learning and critical thinking.",
+		"social_media": {
+			"linkedin": "https://linkedin.com/in/lindamiller_sci"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "Biology Teacher, Urban High School"
+	},
+	{
+		"_id": {
+			"$oid": "664ae2841387e2ad2e8be530"
+		},
+		"first_name": "Kevin",
+		"last_name": "Lee",
+		"password": "kevinL_safe",
+		"email": "kevin.lee@example.com",
+		"phone": "+821012345678",
+		"role": "Student",
+		"bio": "Enthusiastic about music production and sound engineering.",
+		"social_media": {
+			"soundcloud": "soundcloud.com/kevinl_music"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "Audio Production Intern, Music Studio"
+	},
+	{
+		"_id": {
+			"$oid": "664ae3171387e2ad2e8be542"
+		},
+		"first_name": "Jessica",
+		"last_name": "Taylor",
+		"password": "jessicaT_pass",
+		"email": "jessica.t@example.com",
+		"phone": "+14035556677",
+		"role": "Teacher",
+		"bio": "Special education teacher committed to inclusive learning environments.",
+		"social_media": {
+			"facebook": "facebook.com/jessicataylor_sped"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "Special Education Teacher, Elementary School"
+	},
+	{
+		"_id": {
+			"$oid": "664ae3aa1387e2ad2e8be554"
+		},
+		"first_name": "Daniel",
+		"last_name": "Kim",
+		"password": "danielK_secure",
+		"email": "daniel.k@example.com",
+		"phone": "+16041122334",
+		"role": "Student",
+		"bio": "Interested in renewable energy and sustainable technologies.",
+		"social_media": {
+			"linkedin": "https://linkedin.com/in/danielkim_energy"
+		},
+		"profile_picture": "https://i.pravatar.cc",
+		"designation": "Environmental Engineering Co-op, Green Solutions Inc."
+	}
+]
